@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.uv.domaca1.HelloController">
+   <top>
+      <BorderPane BorderPane.alignment="CENTER">
+         <top>
+            <MenuBar style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu text="_Datoteka">
+                  <items>
+                    <MenuItem onAction="#odpriCB" text="_Odpri">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#shraniCB" text="_Shrani">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem onAction="#pobrisiCB" text="_Pobriši">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="C" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem onAction="#izhodCB" text="_Izhod">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="Q" control="ANY" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                  </items>
+                </Menu>
+                <Menu text="_Uredi">
+                     <items>
+                         <CheckMenuItem fx:id="imeCheckItem" onAction="#omogočiIme" text="_Ime" />
+                         <CheckMenuItem fx:id="priimekCheckItem" onAction="#omogočiPriimek" text="_Priimek" />
+                         <CheckMenuItem fx:id="drzavaCheckItem" onAction="#omogočiDržavo" text="_Država" />
+                     </items>
+                </Menu>
+                <Menu text="_Pogled">
+                  <items>
+                    <MenuItem onAction="#izpišivseCB" text="_Izpiši vse" />
+                  </items>
+                </Menu>
+                  <Menu text="P_omoč">
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: paleturquoise;" BorderPane.alignment="CENTER">
+              <items>
+                <Button mnemonicParsing="false" onAction="#odpriCB" text="Odpri" />
+                  <Button mnemonicParsing="false" onAction="#pobrisiCB" text="Pobriši" />
+                  <Button mnemonicParsing="false" onAction="#izhodCB" text="Izhod" />
+                  <Button mnemonicParsing="false" onAction="#izpišivseCB" text="Izpiši vse" />
+              </items>
+            </ToolBar>
+         </bottom>
+      </BorderPane>
+   </top>
+   <bottom>
+      <Label fx:id="status" maxWidth="1.7976931348623157E308" style="-fx-background-color: lightblue;" text="Status" BorderPane.alignment="BOTTOM_LEFT">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <font>
+            <Font size="10.0" />
+         </font></Label>
+   </bottom>
+   <center>
+      <GridPane style="-fx-background-color: lightcyan;" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label contentDisplay="CENTER" text="Vnesi osebo:">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label text="Ime:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Priimek:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Država:" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Stikalo" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <TextField fx:id="priimek" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="ime" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="drzava" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></TextField>
+                  <CheckBox fx:id="dvojniki" mnemonicParsing="false" text="Dvojniki dovoljeni" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+            <GridPane prefWidth="290.0" GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Izberi osebo:">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label text="Oseba:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label text="Položaj:" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <Label alignment="TOP_LEFT" text="Sporočilo:" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <ComboBox fx:id="seznam" prefWidth="150.0" promptText="..." GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></ComboBox>
+                  <Spinner fx:id="spinner" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets right="10.0" />
+                     </GridPane.margin></Spinner>
+                   <TextArea fx:id="sporocilo" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.rowSpan="2">
+                       <GridPane.margin>
+                           <Insets right="10.0" top="5.0" />
+                       </GridPane.margin>
+                   </TextArea>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </GridPane>
+            <GridPane GridPane.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Akcija:" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </GridPane.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding></Label>
+                  <RadioButton fx:id="dodajRB" mnemonicParsing="false" text="Dodaj" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="radioButtons" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="prviRB" mnemonicParsing="false" text="Odstrani prvega" toggleGroup="$radioButtons" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <RadioButton fx:id="izbraniRB" mnemonicParsing="false" text="Odstrani izbranega" toggleGroup="$radioButtons" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button fx:id="izvediB" alignment="BOTTOM_CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#izvediCB" text="Izvedi" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets bottom="5.0" />
+                     </GridPane.margin></Button>
+               </children>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </GridPane>
+            <TextArea fx:id="imenik" prefHeight="110.0" prefWidth="270.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="20.0" right="10.0" top="35.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets></TextArea>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </GridPane>
+   </center>
+</BorderPane>

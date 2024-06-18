@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.uv.domaca3.HelloController">
+   <top>
+      <MenuBar style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="true" text="_Datoteka">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#shranitPodatke" onMenuValidation="#shranitPodatke" text="_Naredi rezervacijo">
+                     <accelerator>
+                        <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+          <Menu mnemonicParsing="false" text="_Uredi">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#clearFields" onMenuValidation="#clearFields" text="_Sprazni">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="E" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+          <Menu mnemonicParsing="false" text="_Pomoč">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#prikaziPomoc" onMenuValidation="#prikaziPomoc" text="_Kartica">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            </items>
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+               </accelerator>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane VBox.vgrow="ALWAYS">
+               <center>
+                  <GridPane style="-fx-background-color: paleturquoise;" BorderPane.alignment="CENTER">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="174.0" minHeight="92.6" prefHeight="115.6" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="172.2" minHeight="105.60000000000002" prefHeight="161.39999999999998" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="179.0" minHeight="115.39999999999998" prefHeight="153.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="179.0" minHeight="125.39999999999998" prefHeight="125.39999999999998" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
+                           <bottom>
+                              <ToolBar style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+                                <items>
+                                  <Button fx:id="submit" mnemonicParsing="false" onAction="#shranitPodatke" style="-fx-background-color: paleturquoise;" text="Naredi rezervacijo" />
+                                    <AnchorPane maxWidth="-Infinity" prefWidth="10.0" />
+                                    <Button fx:id="sprazni" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#clearFields" style="-fx-background-color: paleturquoise;" text="Sprazni vse vnose" />
+                                </items>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </ToolBar>
+                           </bottom>
+                           <center>
+                              <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Separator prefWidth="200.0" />
+                                    <GridPane VBox.vgrow="ALWAYS">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="4" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="Številka kartice   " HBox.hgrow="NEVER">
+                                                   <HBox.margin>
+                                                      <Insets left="20.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="stKarticeTF" prefWidth="150.0" />
+                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                <Label text="Lastnik" />
+                                                <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="lastnikKarticeTF" prefWidth="150.0" />
+                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                <Label text="CCV" />
+                                                <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                                <TextField fx:id="ccv" prefWidth="150.0" />
+                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                                <Button fx:id="helpCard" mnemonicParsing="false" onAction="#prikaziPomoc" style="-fx-background-color: white;" text="Pomoč" />
+                                                <AnchorPane HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <Label text="Podatki o kreditni kartici">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <GridPane.margin>
+                                                <Insets left="10.0" />
+                                             </GridPane.margin>
+                                          </Label>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets right="10.0" />
+                                       </VBox.margin>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </center>
+                        </BorderPane>
+                        <VBox>
+                           <children>
+                              <GridPane VBox.vgrow="ALWAYS">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="60.39999618530273" minHeight="10.0" prefHeight="39.8" vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Izbor destinacije">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefWidth="800.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="SOMETIMES">
+                                       <children>
+                                          <Label text="Država                " HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="drzavaCB" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label text="Kraj" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ComboBox fx:id="krajCB" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <Label text="Začetek" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="zacetekDate" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </DatePicker>
+                                          <Label text="Konec" HBox.hgrow="NEVER">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <DatePicker fx:id="konecDate" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </DatePicker>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_RIGHT" prefHeight="70.0" prefWidth="800.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Način potovanja " HBox.hgrow="NEVER">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ChoiceBox fx:id="nacin" maxWidth="-Infinity" prefWidth="160.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                             <HBox.margin>
+                                                <Insets left="5.0" right="5.0" />
+                                             </HBox.margin>
+                                          </ChoiceBox>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                        <VBox GridPane.rowIndex="1">
+                           <children>
+                              <Separator prefWidth="200.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin></Separator>
+                              <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label text="Število odraslih">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <Spinner fx:id="odrasliS" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Spinner>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                                       <children>
+                                          <Label text="Število otrok">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane prefWidth="12.0" HBox.hgrow="ALWAYS" />
+                                          <Spinner fx:id="otrociS" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </Spinner>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <CheckBox fx:id="b1" mnemonicParsing="false" text="Klima" />
+                                          <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="25.0" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b2" mnemonicParsing="false" text="Parking">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="45.0" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b3" mnemonicParsing="false" text="Brisače">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <AnchorPane maxWidth="1.7976931348623157E308" prefWidth="48.0" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b4" mnemonicParsing="false" text="Hladilnik    ">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                       <children>
+                                          <CheckBox fx:id="b5" mnemonicParsing="false" text="WiFi " />
+                                          <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b6" mnemonicParsing="false" text="Topla voda">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b7" mnemonicParsing="false" text="Elektrika   ">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </CheckBox>
+                                          <AnchorPane maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <CheckBox fx:id="b8" mnemonicParsing="false" text="Posteljnina">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <padding>
+                                                <Insets right="5.0" />
+                                             </padding>
+                                          </CheckBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Tip nastanitve">
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane prefWidth="8.0" HBox.hgrow="ALWAYS" />
+                                          <ChoiceBox fx:id="tipCB" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets left="5.0" />
+                                             </HBox.margin>
+                                          </ChoiceBox>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <Label text="Nastavitev" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Posebne zahteve:">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                              <Separator prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                           <children>
+                              <GridPane VBox.vgrow="ALWAYS">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Podatki o naročniku">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="10.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Ime                " HBox.hgrow="NEVER">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="ime" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Priimek          ">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="priimek" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label text="Datum rojstva">
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                             <HBox.margin>
+                                                <Insets left="20.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <DatePicker fx:id="rojstniDP" maxWidth="1.7976931348623157E308" prefWidth="150.0" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Država" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="drzavaN" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Kraj     " />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <ComboBox fx:id="krajN" maxWidth="1.7976931348623157E308" prefWidth="150.0" style="-fx-background-color: white;" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label text="Naslov" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                          <TextField fx:id="naslov" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS" />
+                                          <AnchorPane HBox.hgrow="ALWAYS" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Dodatne informacije o potnikih:" />
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="55.0" prefWidth="266.0" GridPane.columnIndex="2" GridPane.rowIndex="2" GridPane.rowSpan="2147483647">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <TextArea fx:id="textArea" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
+                                                   <VBox.margin>
+                                                      <Insets bottom="10.0" right="5.0" />
+                                                   </VBox.margin>
+                                                </TextArea>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets right="10.0" />
+                                 </VBox.margin>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

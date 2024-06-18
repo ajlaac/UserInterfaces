@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uv.fri.drugadomaca.HelloController">
+    <top>
+        <MenuBar style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu text="_Datoteka">
+                    <items>
+                        <MenuItem onAction="#odpriCB" text="_Odpri">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                        <MenuItem onAction="#shraniCB" text="_Shrani">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                        <MenuItem onAction="#izhodCB" text="_Izhod">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                    </items>
+                </Menu>
+                <Menu text="_Iskanje">
+                    <items>
+                        <MenuItem onAction="#najdiCB" text="_Najdi">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem onAction="#zamenjajCB" text="Najdi vse in _Zamenjaj">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu text="_Pomoč">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#aboutCB" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <bottom>
+        <Label maxWidth="1.7976931348623157E308" style="-fx-background-color: lightblue;" text="Status" BorderPane.alignment="TOP_LEFT" />
+    </bottom>
+    <center>
+        <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <top>
+                <ToolBar style="-fx-background-color: paleturquoise;" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#odpriCB" text="_Odpri">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                        <Separator orientation="VERTICAL" />
+                        <Button layoutX="10.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#shraniCB" prefHeight="10.0" text="_Shrani">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                        <HBox HBox.hgrow="ALWAYS">
+                            <Region minWidth="0" HBox.hgrow="ALWAYS" />
+                        </HBox>
+                        <Button layoutX="10.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#najdiCB" prefHeight="10.0" text="_Najdi">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <TextField fx:id="najdiTF" managed="false" promptText="najdi" />
+                        <Separator orientation="VERTICAL" />
+                        <Button layoutX="10.0" layoutY="12.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#zamenjajCB" prefHeight="10.0" text="Najdi vse in _Zamenjaj">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <TextField fx:id="najdizTF" promptText="najdi" />
+                  <TextField fx:id="zamenjajTF" managed="false" promptText="zamenjaj" />
+                    </items>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="5.0" left="12.0" right="12.0" top="5.0" />
+               </padding>
+                </ToolBar>
+            </top>
+         <center>
+            <Accordion fx:id="harmonika" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane fx:id="htmlP" animated="false" style="-fx-border-color: paleturquoise;" text="HTML urejevalnik">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HTMLEditor fx:id="editor" htmlText="&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body contenteditable=&quot;true&quot;&gt;&lt;/body&gt;&lt;/html&gt;" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane fx:id="txtP" animated="false" style="-fx-background-color: paleturquoise;" text="Urejevalnik Besedila">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="txt" prefHeight="245.6" prefWidth="598.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+                  <TitledPane fx:id="zapisiP" animated="false" style="-fx-background-color: paleturquoise;" text="Dnevniški zapisi">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea fx:id="zapisi" editable="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+              </panes>
+            </Accordion>
+         </center>
+        </BorderPane>
+    </center>
+</BorderPane>
